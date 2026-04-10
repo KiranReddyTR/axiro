@@ -1,0 +1,22 @@
+{
+  "translation": {
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "about": "About",
+      "careers": "Careers",
+      "news": "News",
+      "categories": "Product Categories",
+      "viewAll": "View All Products \u2192",
+      "contact": "Contact Us",
+      "sample": "Get a Sample"
+    },
+    "hero": {
+      "titlePart1": "Engineering",
+      "titlePart2": "The Future",
+      "subtitle": "High-performance RF and mixed-signal semiconductors for the next generation of global connectivity, 5G infrastructure, and SATCOM innovation.",
+      "ctaProducts": "View Products",
+      "ctaSample": "Request Sample"
+    }
+  }
+}

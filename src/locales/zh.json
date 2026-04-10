@@ -1,0 +1,22 @@
+{
+  "translation": {
+    "nav": {
+      "home": "首页",
+      "products": "产品",
+      "about": "关于我们",
+      "careers": "招贤纳士",
+      "news": "新闻动态",
+      "categories": "产品类别",
+      "viewAll": "查看所有产品 \u2192",
+      "contact": "联系我们",
+      "sample": "获取样品"
+    },
+    "hero": {
+      "titlePart1": "智造",
+      "titlePart2": "未来",
+      "subtitle": "为下一代全球互联、5G 基础设施和卫星通信提供高性能射频与混合信号半导体。",
+      "ctaProducts": "查看产品",
+      "ctaSample": "索取样品"
+    }
+  }
+}

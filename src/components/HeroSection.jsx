@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Shield, Globe, ChevronDown, Play } from 'lucide-react';
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const stats = [
   { value: '400M+', label: 'Devices Shipped' },
@@ -16,6 +17,7 @@ const badges = [
 ];
 
 export default function HeroSection() {
+  const { t } = useTranslation();
   const particlesRef = useRef(null);
 
   useEffect(() => {
@@ -108,17 +110,15 @@ export default function HeroSection() {
             </div>
 
             <h1 className="font-poppins font-bold text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6">
-              Engineering{' '}
+              {t('hero.titlePart1')}{' '}
               <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                Tomorrow's
+                {t('hero.titlePart2')}
               </span>
-              <br />
-              Connectivity
               <span className="text-blue-400">.</span>
             </h1>
 
             <p className="text-lg text-slate-300 leading-relaxed mb-8 max-w-xl">
-              Axiro delivers groundbreaking RF and mmWave semiconductor solutions — from 5G wireless infrastructure to aerospace defense systems, enabling a more connected world.
+              {t('hero.subtitle')}
             </p>
 
             {/* Badges */}
@@ -140,13 +140,13 @@ export default function HeroSection() {
                 to="/products"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300"
               >
-                Explore Products <ArrowRight className="w-5 h-5" />
+                {t('hero.ctaProducts')} <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 hover:scale-105 transition-all duration-300"
               >
-                <Play className="w-4 h-4" /> Request Sample
+                <Play className="w-4 h-4" /> {t('hero.ctaSample')}
               </Link>
             </div>
           </div>

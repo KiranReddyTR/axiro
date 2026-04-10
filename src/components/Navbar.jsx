@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Zap } from 'lucide-react';
+import { Menu, X, ChevronDown, Zap, Globe } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import logo from '../assets/logo.jpeg';
 
 const productLinks = [
@@ -15,14 +16,15 @@ const productLinks = [
 ];
 
 const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Products', href: '/products', hasDropdown: true },
-  { label: 'About', href: '/about' },
-  { label: 'Careers', href: '/careers' },
-  { label: 'News', href: '/news' },
+  { labelKey: 'nav.home', href: '/' },
+  { labelKey: 'nav.products', href: '/products', hasDropdown: true },
+  { labelKey: 'nav.about', href: '/about' },
+  { labelKey: 'nav.careers', href: '/careers' },
+  { labelKey: 'nav.news', href: '/news' },
 ];
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -42,6 +44,11 @@ export default function Navbar() {
   const isActive = (href) => {
     if (href === '/') return location.pathname === '/';
     return location.pathname.startsWith(href);
+  };
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language.startsWith('en') ? 'zh' : 'en';
+    i18n.changeLanguage(newLang);
   };
 
   return (
@@ -65,12 +72,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) =>
               link.hasDropdown ? (
-                <div
-                  key={link.label}
-                  className="relative"
-                  onMouseEnter={() => setDropdownOpen(true)}
-                  onMouseLeave={() => setDropdownOpen(false)}
-                >
+                <div key={link.labelKey} className="relative" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
                   <button
                     className={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ${
                       isActive(link.href)
@@ -80,7 +82,7 @@ export default function Navbar() {
                         : 'text-white/90 hover:text-white hover:bg-white/10'
                     }`}
                   >
-                    {link.label}
+                    {t(link.labelKey)}
                     <ChevronDown
                       className={`w-4 h-4 transition-transform duration-200 ${
                         dropdownOpen ? 'rotate-180' : ''
@@ -99,7 +101,7 @@ export default function Navbar() {
                     <div className="p-2">
                       <div className="px-3 py-2 mb-1">
                         <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                          Product Categories
+                          {t('nav.categories')}
                         </span>
                       </div>
                       {productLinks.map((p) => (
@@ -117,7 +119,7 @@ export default function Navbar() {
                           to="/products"
                           className="flex items-center justify-center w-full py-2 text-sm font-semibold text-primary-600 hover:bg-primary-50 rounded-xl transition-colors"
                         >
-                          View All Products →
+                          {t('nav.viewAll')}
                         </Link>
                       </div>
                     </div>
@@ -125,7 +127,7 @@ export default function Navbar() {
                 </div>
               ) : (
                 <Link
-                  key={link.label}
+                  key={link.labelKey}
                   to={link.href}
                   className={`px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ${
                     isActive(link.href)
@@ -135,14 +137,26 @@ export default function Navbar() {
                       : 'text-white/90 hover:text-white hover:bg-white/10'
                   }`}
                 >
-                  {link.label}
+                  {t(link.labelKey)}
                 </Link>
               )
             )}
           </div>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons & Language Toggle */}
           <div className="hidden lg:flex items-center gap-3">
+            <button
+              onClick={toggleLanguage}
+              className={`flex items-center gap-1.5 px-3 py-2 text-sm font-bold rounded-xl transition-all duration-200 ${
+                scrolled
+                  ? 'text-gray-600 hover:text-primary-600 hover:bg-gray-50'
+                  : 'text-white/90 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              <Globe className="w-4 h-4" />
+              {i18n.language.startsWith('en') ? 'EN' : '中文'}
+            </button>
+            <div className={`w-px h-6 ${scrolled ? 'bg-gray-200' : 'bg-white/20'}`}></div>
             <Link
               to="/contact"
               className={`px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-200 ${
@@ -151,10 +165,10 @@ export default function Navbar() {
                   : 'text-white/90 hover:text-white'
               }`}
             >
-              Contact
+              {t('nav.contact')}
             </Link>
             <Link to="/contact" className="btn-primary text-sm py-2.5 px-5">
-              Get a Sample
+              {t('nav.sample')}
             </Link>
           </div>
 
@@ -177,7 +191,7 @@ export default function Navbar() {
         <div className="bg-white border-t border-gray-100 shadow-xl">
           <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
             {navLinks.map((link) => (
-              <div key={link.label}>
+              <div key={link.labelKey}>
                 <Link
                   to={link.href}
                   className={`block px-4 py-3 rounded-xl font-medium text-sm transition-colors ${
@@ -186,7 +200,7 @@ export default function Navbar() {
                       : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
                   }`}
                 >
-                  {link.label}
+                  {t(link.labelKey)}
                 </Link>
                 {link.hasDropdown && (
                   <div className="ml-4 mt-1 space-y-1">
@@ -204,11 +218,18 @@ export default function Navbar() {
               </div>
             ))}
             <div className="pt-3 border-t border-gray-100 flex flex-col gap-2">
+              <button
+                onClick={toggleLanguage}
+                className="flex items-center justify-center gap-2 w-full py-2.5 text-sm font-bold text-gray-700 hover:bg-gray-50 rounded-xl"
+              >
+                <Globe className="w-4 h-4" />
+                {i18n.language.startsWith('en') ? 'Language: English' : '语言: 中文 (Simplified)'}
+              </button>
               <Link to="/contact" className="btn-outline text-sm justify-center">
-                Contact Us
+                {t('nav.contact')}
               </Link>
               <Link to="/contact" className="btn-primary text-sm justify-center">
-                Get a Sample
+                {t('nav.sample')}
               </Link>
             </div>
           </div>
