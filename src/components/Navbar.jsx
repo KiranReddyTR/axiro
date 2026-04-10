@@ -77,7 +77,7 @@ export default function Navbar() {
                         ? 'text-primary-600 bg-primary-50'
                         : scrolled
                         ? 'text-gray-600 hover:text-primary-600 hover:bg-gray-50'
-                        : 'text-gray-700 hover:text-primary-600 hover:bg-white/10'
+                        : 'text-white/90 hover:text-white hover:bg-white/10'
                     }`}
                   >
                     {link.label}
@@ -132,7 +132,7 @@ export default function Navbar() {
                       ? 'text-primary-600 bg-primary-50'
                       : scrolled
                       ? 'text-gray-600 hover:text-primary-600 hover:bg-gray-50'
-                      : 'text-gray-700 hover:text-primary-600 hover:bg-white/10'
+                      : 'text-white/90 hover:text-white hover:bg-white/10'
                   }`}
                 >
                   {link.label}
@@ -148,7 +148,7 @@ export default function Navbar() {
               className={`px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-200 ${
                 scrolled
                   ? 'text-gray-600 hover:text-primary-600'
-                  : 'text-gray-700 hover:text-primary-600'
+                  : 'text-white/90 hover:text-white'
               }`}
             >
               Contact
