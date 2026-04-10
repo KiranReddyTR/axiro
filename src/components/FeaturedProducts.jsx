@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import Tilt from 'react-parallax-tilt';
 
 const products = [
   {
@@ -107,11 +108,24 @@ export default function FeaturedProducts() {
         {/* Product Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {products.map((product, i) => (
-            <Link
+            <Tilt
               key={product.id}
-              to={product.href}
-              className={`reveal delay-${Math.min(i + 1, 6)} group relative bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300`}
+              tiltMaxAngleX={10}
+              tiltMaxAngleY={10}
+              perspective={1000}
+              scale={1.02}
+              transitionSpeed={1500}
+              gyroscope={true}
+              glareEnable={true}
+              glareMaxOpacity={0.1}
+              glareColor="#ffffff"
+              glarePosition="all"
+              className={`reveal delay-${Math.min(i + 1, 6)} rounded-2xl overflow-hidden`}
             >
+              <Link
+                to={product.href}
+                className="block group relative bg-white border border-gray-100 h-full shadow-sm hover:shadow-xl transition-all duration-300"
+              >
               {/* Top gradient bar */}
               <div className={`h-1.5 bg-gradient-to-r ${product.gradient} w-full`} />
 
@@ -155,12 +169,9 @@ export default function FeaturedProducts() {
                   ))}
                 </div>
 
-                {/* View CTA */}
-                <div className="flex items-center gap-1 text-primary-500 text-xs font-semibold group-hover:gap-2 transition-all">
-                  View Details <ArrowRight className="w-3 h-3" />
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </Tilt>
           ))}
         </div>
       </div>

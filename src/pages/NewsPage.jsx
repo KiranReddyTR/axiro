@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { ChevronRight, ArrowRight, Calendar, Tag } from 'lucide-react';
+import Tilt from 'react-parallax-tilt';
 
 const newsArticles = [
   {
@@ -116,63 +117,84 @@ export default function NewsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           {/* Featured Article */}
           <div className="mb-12 reveal">
-            <div className="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
-              <div className={`h-2 bg-gradient-to-r ${featuredArticle.gradient}`} />
-              <div className="p-8 md:p-12">
-                <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <span className={`${featuredArticle.categoryColor} text-white text-xs font-bold px-3 py-1.5 rounded-lg`}>
-                    {featuredArticle.category}
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 text-xs text-gray-400">
-                    <Calendar className="w-3.5 h-3.5" /> {featuredArticle.date}
-                  </span>
-                  <span className="text-xs text-gray-400 bg-gray-50 px-2 py-1 rounded-lg">{featuredArticle.readTime}</span>
-                  <span className="text-xs font-bold text-yellow-600 bg-yellow-50 border border-yellow-200 px-2 py-1 rounded-lg">⭐ Featured</span>
+            <Tilt
+              tiltMaxAngleX={5}
+              tiltMaxAngleY={5}
+              perspective={1500}
+              scale={1.01}
+              transitionSpeed={2000}
+              gyroscope={true}
+              glareEnable={true}
+              glareMaxOpacity={0.03}
+              glareColor="#ffffff"
+              className="rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+            >
+              <div className="bg-white border border-gray-100 group">
+                <div className={`h-2 bg-gradient-to-r ${featuredArticle.gradient}`} />
+                <div className="p-8 md:p-12">
+                  <div className="flex flex-wrap items-center gap-3 mb-6">
+                    <span className={`${featuredArticle.categoryColor} text-white text-xs font-bold px-3 py-1.5 rounded-lg`}>
+                      {featuredArticle.category}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 text-xs text-gray-400">
+                      <Calendar className="w-3.5 h-3.5" /> {featuredArticle.date}
+                    </span>
+                    <span className="text-xs text-gray-400 bg-gray-50 px-2 py-1 rounded-lg">{featuredArticle.readTime}</span>
+                    <span className="text-xs font-bold text-yellow-600 bg-yellow-50 border border-yellow-200 px-2 py-1 rounded-lg">⭐ Featured</span>
+                  </div>
+                  <h2 className="font-poppins font-bold text-2xl md:text-3xl text-gray-900 mb-4 group-hover:text-primary-600 transition-colors leading-tight">
+                    {featuredArticle.title}
+                  </h2>
+                  <p className="text-gray-500 leading-relaxed text-base mb-6 max-w-3xl">
+                    {featuredArticle.excerpt}
+                  </p>
+                  <Link to={`/news/${featuredArticle.id}`} className="inline-flex items-center gap-2 text-primary-500 font-semibold group-hover:gap-3 transition-all">
+                    Read Full Article <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
-                <h2 className="font-poppins font-bold text-2xl md:text-3xl text-gray-900 mb-4 group-hover:text-primary-600 transition-colors leading-tight">
-                  {featuredArticle.title}
-                </h2>
-                <p className="text-gray-500 leading-relaxed text-base mb-6 max-w-3xl">
-                  {featuredArticle.excerpt}
-                </p>
-                <Link to={`/news/${featuredArticle.id}`} className="inline-flex items-center gap-2 text-primary-500 font-semibold group-hover:gap-3 transition-all">
-                  Read Full Article <ArrowRight className="w-4 h-4" />
-                </Link>
               </div>
-            </div>
+            </Tilt>
           </div>
 
           {/* Article Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {restArticles.map((article, i) => (
-              <div
+              <Tilt
                 key={article.id}
-                className={`reveal delay-${Math.min(i+1,5)} group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
+                tiltMaxAngleX={10}
+                tiltMaxAngleY={10}
+                perspective={1000}
+                scale={1.02}
+                transitionSpeed={1500}
+                gyroscope={true}
+                className={`reveal delay-${Math.min(i+1,5)} rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300`}
               >
-                <div className={`h-1.5 bg-gradient-to-r ${article.gradient}`} />
-                <div className="p-6">
-                  <div className="flex items-center gap-2 flex-wrap mb-4">
-                    <span className={`${article.categoryColor} text-white text-xs font-bold px-2.5 py-1 rounded-lg`}>
-                      {article.category}
-                    </span>
-                    <span className="flex items-center gap-1 text-xs text-gray-400">
-                      <Calendar className="w-3 h-3" /> {article.date}
-                    </span>
-                  </div>
-                  <h3 className="font-bold font-poppins text-gray-900 text-base mb-3 group-hover:text-primary-600 transition-colors leading-snug">
-                    {article.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">
-                    {article.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-gray-400">{article.readTime}</span>
-                    <Link to={`/news/${article.id}`} className="inline-flex items-center gap-1 text-primary-500 text-sm font-semibold group-hover:gap-2 transition-all">
-                      Read More <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
+                <div className="bg-white border border-gray-100 h-full group">
+                  <div className={`h-1.5 bg-gradient-to-r ${article.gradient}`} />
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 flex-wrap mb-4">
+                      <span className={`${article.categoryColor} text-white text-xs font-bold px-2.5 py-1 rounded-lg`}>
+                        {article.category}
+                      </span>
+                      <span className="flex items-center gap-1 text-xs text-gray-400">
+                        <Calendar className="w-3 h-3" /> {article.date}
+                      </span>
+                    </div>
+                    <h3 className="font-bold font-poppins text-gray-900 text-base mb-3 group-hover:text-primary-600 transition-colors leading-snug">
+                      {article.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">
+                      {article.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-400">{article.readTime}</span>
+                      <Link to={`/news/${article.id}`} className="inline-flex items-center gap-1 text-primary-500 text-sm font-semibold group-hover:gap-2 transition-all">
+                        Read More <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Tilt>
             ))}
           </div>
         </div>

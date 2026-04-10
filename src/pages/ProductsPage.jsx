@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { ArrowRight, Search, Filter, ChevronRight } from 'lucide-react';
+import Tilt from 'react-parallax-tilt';
 
 const categories = [
   {
@@ -180,12 +181,24 @@ export default function ProductsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filtered.map((cat, i) => (
-                <Link
+                <Tilt
                   key={cat.id}
-                  to={cat.href}
-                  className={`reveal delay-${Math.min(i + 1, 6)} group relative bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300`}
+                  tiltMaxAngleX={10}
+                  tiltMaxAngleY={10}
+                  perspective={1000}
+                  scale={1.02}
+                  transitionSpeed={1500}
+                  gyroscope={true}
+                  glareEnable={true}
+                  glareMaxOpacity={0.1}
+                  glareColor="#ffffff"
+                  className={`reveal delay-${Math.min(i + 1, 6)} rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300`}
                 >
-                  <div className={`h-1.5 bg-gradient-to-r ${cat.gradient}`} />
+                  <Link
+                    to={cat.href}
+                    className="block bg-white border border-gray-100 h-full group outline-none"
+                  >
+                    <div className={`h-1.5 bg-gradient-to-r ${cat.gradient}`} />
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div className={`w-12 h-12 bg-gradient-to-br ${cat.gradient} rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}>
@@ -215,6 +228,7 @@ export default function ProductsPage() {
                     </div>
                   </div>
                 </Link>
+              </Tilt>
               ))}
             </div>
           </div>
@@ -229,7 +243,16 @@ export default function ProductsPage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {featuredItems.map((p, i) => (
-                <Link to={`/product/${p.code.toLowerCase()}`} key={p.code} className={`reveal delay-${Math.min(i+1,5)} group flex items-center gap-4 bg-gray-50 border border-gray-100 rounded-xl p-4 hover:border-primary-200 hover:bg-primary-50 hover:shadow-md transition-all duration-200`}>
+                <Tilt
+                  key={p.code}
+                  tiltMaxAngleX={15}
+                  tiltMaxAngleY={15}
+                  perspective={1000}
+                  scale={1.05}
+                  transitionSpeed={1000}
+                  className={`reveal delay-${Math.min(i+1,5)} rounded-xl overflow-hidden`}
+                >
+                  <Link to={`/product/${p.code.toLowerCase()}`} className="flex items-center gap-4 bg-gray-50 border border-gray-100 p-4 h-full group hover:border-primary-200 hover:bg-primary-50 transition-all duration-200">
                   <div className={`flex-shrink-0 w-10 h-10 bg-gradient-to-br ${p.gradient} rounded-lg grid place-items-center shadow group-hover:scale-110 transition-transform duration-200`}>
                     <div className="w-5 h-5 border border-white/50 rounded grid place-items-center">
                       <div className="w-2.5 h-2.5 bg-white/80 rounded-sm" />
@@ -242,6 +265,7 @@ export default function ProductsPage() {
                   </div>
                   <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-primary-500 group-hover:translate-x-0.5 transition-all flex-shrink-0" />
                 </Link>
+              </Tilt>
               ))}
             </div>
           </div>

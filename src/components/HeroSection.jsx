@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Shield, Globe, ChevronDown, Play } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
+import ThreeDChip from './ThreeDChip';
 
 const stats = [
   { value: '400M+', label: 'Devices Shipped' },
@@ -149,60 +150,18 @@ export default function HeroSection() {
                 <Play className="w-4 h-4" /> {t('hero.ctaSample')}
               </Link>
             </div>
-          </div>
-
-          {/* Right — Visual card */}
+          </div>          {/* Right — True 3D WebGL Element */}
           <div className="hidden lg:block relative animate-fade-in animate-delay-300">
-            {/* Circuit board visual */}
-            <div className="relative w-full aspect-square max-w-md mx-auto">
-              {/* Central circle */}
-              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/20 to-cyan-500/10 rounded-3xl border border-violet-400/20 backdrop-blur-sm" />
-
-              {/* Animated ring */}
-              <div className="absolute inset-4 border border-violet-400/30 rounded-2xl animate-spin" style={{ animationDuration: '20s' }} />
-              <div className="absolute inset-8 border border-cyan-400/20 rounded-2xl animate-spin" style={{ animationDuration: '12s', animationDirection: 'reverse' }} />
-
-              {/* Central icon */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-violet-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-2xl shadow-violet-500/40 animate-float">
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-1 relative">
-                      <div className="absolute inset-0 border-2 border-white/40 rounded-xl" />
-                      <div className="absolute inset-2 border border-white/20 rounded-lg" />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="grid grid-cols-3 gap-0.5">
-                          {Array.from({ length: 9 }).map((_, i) => (
-                            <div
-                              key={i}
-                              className="w-1.5 h-1.5 bg-white/80 rounded-sm"
-                              style={{ opacity: [0, 2, 4, 6, 8].includes(i) ? 0.9 : 0.3 }}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                    <span className="text-white text-xs font-bold">RF CHIP</span>
-                  </div>
-                </div>
+            {/* Ambient Backlight to frame the chip */}
+            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-cyan-500/10 rounded-full blur-3xl" />
+            
+            <Suspense fallback={
+              <div className="w-full h-[500px] flex items-center justify-center">
+                <div className="w-12 h-12 border-4 border-violet-500/30 border-t-cyan-400 rounded-full animate-spin" />
               </div>
-
-              {/* Orbiting chips */}
-              {['5G', 'mmW', 'SAT', 'DEF'].map((label, i) => {
-                const angle = (i * 90 - 45) * (Math.PI / 180);
-                const radius = 140;
-                const x = 50 + Math.cos(angle) * 35;
-                const y = 50 + Math.sin(angle) * 35;
-                return (
-                  <div
-                    key={label}
-                    className="absolute w-14 h-14 bg-slate-800/80 border border-violet-400/30 rounded-xl flex items-center justify-center text-violet-300 text-xs font-bold backdrop-blur-sm shadow-lg"
-                    style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%,-50%)' }}
-                  >
-                    {label}
-                  </div>
-                );
-              })}
-            </div>
+            }>
+              <ThreeDChip />
+            </Suspense>
           </div>
         </div>
       </div>

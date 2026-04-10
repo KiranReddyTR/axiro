@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import Tilt from 'react-parallax-tilt';
 
 const technologies = [
   {
@@ -92,8 +93,18 @@ export default function TechnologiesSection() {
         {/* Tech Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {technologies.map((tech, i) => (
-            <div
+            <Tilt
               key={tech.id}
+              tiltMaxAngleX={15}
+              tiltMaxAngleY={15}
+              perspective={1000}
+              scale={1.03}
+              transitionSpeed={1500}
+              gyroscope={true}
+              glareEnable={true}
+              glareMaxOpacity={0.15}
+              glareColor="lightblue"
+              glarePosition="all"
               className={`reveal delay-${Math.min(i + 1, 6)} group relative bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden`}
             >
               {/* Background glow on hover */}
@@ -131,7 +142,7 @@ export default function TechnologiesSection() {
                   ))}
                 </div>
               </div>
-            </div>
+            </Tilt>
           ))}
         </div>
 

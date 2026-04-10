@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Wifi, Radio, Satellite, Shield, Zap, Globe } from 'lucide-react';
+import Tilt from 'react-parallax-tilt';
 
 const industries = [
   {
@@ -105,10 +106,21 @@ export default function IndustriesSection() {
             {industries.slice(0, 3).map((ind, i) => {
               const Icon = ind.icon;
               return (
-                <div
+                <Tilt
                   key={ind.id}
-                  className={`reveal delay-${i + 1} group relative ${ind.bgLight} border ${ind.borderLight} rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden`}
+                  tiltMaxAngleX={7}
+                  tiltMaxAngleY={7}
+                  perspective={1000}
+                  scale={1.02}
+                  transitionSpeed={1500}
+                  gyroscope={true}
+                  glareEnable={true}
+                  glareMaxOpacity={0.05}
+                  glareColor="#ffffff"
+                  glarePosition="all"
+                  className={`reveal delay-${i + 1} rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300`}
                 >
+                  <div className={`relative ${ind.bgLight} border ${ind.borderLight} p-6 h-full transition-colors duration-300`}>
                   {/* Gradient top accent */}
                   <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${ind.gradient}`} />
 
@@ -143,6 +155,7 @@ export default function IndustriesSection() {
                     Learn More <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
+              </Tilt>
               );
             })}
           </div>
@@ -152,10 +165,20 @@ export default function IndustriesSection() {
             {industries.slice(3).map((ind, i) => {
               const Icon = ind.icon;
               return (
-                <div
+                <Tilt
                   key={ind.id}
-                  className={`reveal delay-${i + 1} group flex gap-6 ${ind.bgLight} border ${ind.borderLight} rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden relative`}
+                  tiltMaxAngleX={5}
+                  tiltMaxAngleY={5}
+                  perspective={1500}
+                  scale={1.01}
+                  transitionSpeed={1500}
+                  gyroscope={true}
+                  glareEnable={true}
+                  glareMaxOpacity={0.03}
+                  glareColor="#ffffff"
+                  className={`reveal delay-${i + 1} rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300`}
                 >
+                  <div className={`flex gap-6 ${ind.bgLight} border ${ind.borderLight} p-6 h-full relative transition-colors duration-300`}>
                   <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${ind.gradient}`} />
 
                   <div className="flex-shrink-0">
@@ -191,6 +214,7 @@ export default function IndustriesSection() {
                     </Link>
                   </div>
                 </div>
+              </Tilt>
               );
             })}
           </div>

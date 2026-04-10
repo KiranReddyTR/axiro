@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { ChevronRight, MapPin, Clock, ArrowRight, Users, Rocket, Star } from 'lucide-react';
+import Tilt from 'react-parallax-tilt';
 
 const departments = [
   { id: 'all', label: 'All Roles' },
@@ -92,15 +93,25 @@ export default function CareersPage() {
               {perks.map((perk, i) => {
                 const Icon = perk.icon;
                 return (
-                  <div key={perk.title} className={`reveal delay-${i+1} flex gap-4 bg-gradient-to-br from-violet-50 to-cyan-50 border border-violet-100 rounded-2xl p-6`}>
-                    <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-                      <Icon className="w-6 h-6 text-white" />
+                  <Tilt
+                    key={perk.title}
+                    tiltMaxAngleX={15}
+                    tiltMaxAngleY={15}
+                    perspective={1000}
+                    scale={1.05}
+                    transitionSpeed={1500}
+                    className={`reveal delay-${i+1} rounded-2xl overflow-hidden`}
+                  >
+                    <div className="flex gap-4 bg-gradient-to-br from-violet-50 to-cyan-50 border border-violet-100 p-6 h-full">
+                      <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold font-poppins text-gray-900 mb-1">{perk.title}</h3>
+                        <p className="text-gray-500 text-sm leading-relaxed">{perk.desc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-bold font-poppins text-gray-900 mb-1">{perk.title}</h3>
-                      <p className="text-gray-500 text-sm leading-relaxed">{perk.desc}</p>
-                    </div>
-                  </div>
+                  </Tilt>
                 );
               })}
             </div>
@@ -159,40 +170,47 @@ export default function CareersPage() {
             {/* Job cards */}
             <div className="space-y-3">
               {filtered.map((job, i) => (
-                <div
+                <Tilt
                   key={job.id}
-                  className={`reveal delay-${Math.min(i+1, 5)} group flex items-center justify-between gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-lg hover:border-primary-100 hover:bg-primary-50/30 transition-all duration-200`}
+                  tiltMaxAngleX={5}
+                  tiltMaxAngleY={5}
+                  perspective={2000}
+                  scale={1.01}
+                  transitionSpeed={1000}
+                  className={`reveal delay-${Math.min(i+1, 5)} rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-200`}
                 >
-                  <div className="flex items-center gap-4 flex-1 min-w-0">
-                    <div className={`flex-shrink-0 w-11 h-11 bg-gradient-to-br ${job.gradient} rounded-xl flex items-center justify-center shadow group-hover:scale-110 transition-transform duration-200`}>
-                      <div className="w-5 h-5 border border-white/50 rounded grid place-items-center">
-                        <div className="w-2.5 h-2.5 bg-white/80 rounded-sm" />
+                  <div className="group flex items-center justify-between gap-4 bg-white border border-gray-100 p-5 h-full hover:border-primary-100 hover:bg-primary-50/30">
+                    <div className="flex items-center gap-4 flex-1 min-w-0">
+                      <div className={`flex-shrink-0 w-11 h-11 bg-gradient-to-br ${job.gradient} rounded-xl flex items-center justify-center shadow group-hover:scale-110 transition-transform duration-200`}>
+                        <div className="w-5 h-5 border border-white/50 rounded grid place-items-center">
+                          <div className="w-2.5 h-2.5 bg-white/80 rounded-sm" />
+                        </div>
+                      </div>
+                      <div className="min-w-0">
+                        <h3 className="font-semibold font-poppins text-gray-900 text-sm mb-1 group-hover:text-primary-700 transition-colors truncate">
+                          {job.title}
+                        </h3>
+                        <div className="flex items-center gap-3 flex-wrap">
+                          <span className="flex items-center gap-1 text-xs text-gray-400">
+                            <MapPin className="w-3 h-3" /> {job.location}
+                          </span>
+                          <span className="flex items-center gap-1 text-xs text-gray-400">
+                            <Clock className="w-3 h-3" /> {job.type}
+                          </span>
+                          <span className="text-xs px-2 py-0.5 bg-primary-50 text-primary-600 font-semibold rounded-full capitalize">
+                            {job.dept}
+                          </span>
+                        </div>
                       </div>
                     </div>
-                    <div className="min-w-0">
-                      <h3 className="font-semibold font-poppins text-gray-900 text-sm mb-1 group-hover:text-primary-700 transition-colors truncate">
-                        {job.title}
-                      </h3>
-                      <div className="flex items-center gap-3 flex-wrap">
-                        <span className="flex items-center gap-1 text-xs text-gray-400">
-                          <MapPin className="w-3 h-3" /> {job.location}
-                        </span>
-                        <span className="flex items-center gap-1 text-xs text-gray-400">
-                          <Clock className="w-3 h-3" /> {job.type}
-                        </span>
-                        <span className="text-xs px-2 py-0.5 bg-primary-50 text-primary-600 font-semibold rounded-full capitalize">
-                          {job.dept}
-                        </span>
-                      </div>
-                    </div>
+                    <a
+                      href="mailto:hr@axiro.com"
+                      className="flex-shrink-0 inline-flex items-center gap-1.5 px-4 py-2 bg-primary-500 text-white text-xs font-semibold rounded-xl hover:bg-primary-600 hover:scale-105 transition-all duration-200 shadow"
+                    >
+                      Apply <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
                   </div>
-                  <a
-                    href="mailto:hr@axiro.com"
-                    className="flex-shrink-0 inline-flex items-center gap-1.5 px-4 py-2 bg-primary-500 text-white text-xs font-semibold rounded-xl hover:bg-primary-600 hover:scale-105 transition-all duration-200 shadow"
-                  >
-                    Apply <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
-                </div>
+                </Tilt>
               ))}
             </div>
           </div>
