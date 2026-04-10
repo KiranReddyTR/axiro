@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Users, Target, TrendingUp, Award } from 'lucide-react';
+import { ArrowRight, Users, Target, TrendingUp, Award, ShieldCheck, Settings, Lightbulb, Rocket, Leaf } from 'lucide-react';
 
 const values = [
-  { icon: '🔐', title: 'Integrity & Responsibility', desc: 'We hold ourselves to the highest standards of ethics, accountability, and ownership across all decisions.' },
-  { icon: '⚙️', title: 'Engineering Excellence', desc: 'We engineer with obsessive focus on precision, performance, and efficiency — refining and validating at every stage.' },
-  { icon: '💡', title: 'Customers at the Core', desc: 'Our customers\' success is our success. We listen, anticipate challenges, and design solutions that are practical and scalable.' },
-  { icon: '🚀', title: 'Passion for Possibilities', desc: 'We take on ambitious goals, solve industry-defining problems, and shape the next era of wireless innovation.' },
-  { icon: '🌱', title: 'Growing Together', desc: 'We foster a culture of learning, mentorship, and shared success where individuals are empowered to innovate and excel.' },
+  { icon: <ShieldCheck className="w-8 h-8 text-cyan-400" />, title: 'Integrity & Responsibility', desc: 'We hold ourselves to the highest standards of ethics, accountability, and ownership across all decisions.' },
+  { icon: <Settings className="w-8 h-8 text-violet-400" />, title: 'Engineering Excellence', desc: 'We engineer with obsessive focus on precision, performance, and efficiency — refining and validating at every stage.' },
+  { icon: <Lightbulb className="w-8 h-8 text-cyan-400" />, title: 'Customers at the Core', desc: 'Our customers\' success is our success. We listen, anticipate challenges, and design solutions that are practical and scalable.' },
+  { icon: <Rocket className="w-8 h-8 text-violet-400" />, title: 'Passion for Possibilities', desc: 'We take on ambitious goals, solve industry-defining problems, and shape the next era of wireless innovation.' },
+  { icon: <Leaf className="w-8 h-8 text-cyan-400" />, title: 'Growing Together', desc: 'We foster a culture of learning, mentorship, and shared success where individuals are empowered to innovate and excel.' },
 ];
 
 const achievements = [

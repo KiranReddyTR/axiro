@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import MouseParallaxBackground from '../components/MouseParallaxBackground';
 import Footer from '../components/Footer';
-import { ChevronRight, ChevronDown } from 'lucide-react';
+import { ChevronRight, ChevronDown, ShieldCheck, Settings, Lightbulb, Rocket, Leaf } from 'lucide-react';
 
 const team = [
   { name: 'Naveen Yanduru', role: 'Chief Executive Officer', initials: 'NY', gradient: 'from-violet-500 to-violet-700', bio: 'Distinguished semiconductor leader with 25+ years in RF, analog, and mixed-signal technologies. PhD from UT Dallas. 25 IEEE publications.' },
@@ -134,11 +134,11 @@ export default function AboutPage() {
                   <div className="hero-grid absolute inset-0 opacity-20" />
                   <div className="relative space-y-5">
                     {[
-                      { icon: '🔐', title: 'Integrity & Responsibility', color: 'text-violet-300' },
-                      { icon: '⚙️', title: 'Engineering Excellence', color: 'text-cyan-300' },
-                      { icon: '💡', title: 'Customers at the Core', color: 'text-violet-300' },
-                      { icon: '🚀', title: 'Passion for Possibilities', color: 'text-emerald-300' },
-                      { icon: '🌱', title: 'Growing Together', color: 'text-orange-300' },
+                      { icon: <ShieldCheck />, title: 'Integrity & Responsibility', color: 'text-violet-300' },
+                      { icon: <Settings />, title: 'Engineering Excellence', color: 'text-cyan-300' },
+                      { icon: <Lightbulb />, title: 'Customers at the Core', color: 'text-violet-300' },
+                      { icon: <Rocket />, title: 'Passion for Possibilities', color: 'text-emerald-300' },
+                      { icon: <Leaf />, title: 'Growing Together', color: 'text-orange-300' },
                     ].map((v) => (
                       <div key={v.title} className="flex items-center gap-4 glass rounded-xl p-4">
                         <span className="text-2xl">{v.icon}</span>
