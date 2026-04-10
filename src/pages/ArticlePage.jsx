@@ -26,7 +26,7 @@ const articleDatabase = {
       <h3>Looking Ahead</h3>
       <p>With an expanded design center presence in San Diego (USA), Bengaluru (India), Turkey, and China, Axiro is heavily investing in Next-Gen R&D. The company plans to rapidly expand its portfolio of Active Electronically Scanned Array (AESA) solutions for low earth orbit (LEO) satellites and wideband tactical radios.</p>
     `,
-    imageGradient: 'from-blue-600 to-indigo-900'
+    imageGradient: 'from-violet-600 to-indigo-900'
   }
 };
 

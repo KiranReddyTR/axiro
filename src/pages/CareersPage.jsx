@@ -15,21 +15,21 @@ const departments = [
 ];
 
 const jobs = [
-  { id: 1, title: 'SoC / Software / Architecture / IP Manager', location: 'Bangalore, KA, IN', type: 'Full-time', dept: 'architecture', gradient: 'from-violet-500 to-blue-500' },
-  { id: 2, title: 'SoC Design Manager', location: 'Bangalore, KA, IN', type: 'Full-time', dept: 'design', gradient: 'from-blue-500 to-blue-600' },
+  { id: 1, title: 'SoC / Software / Architecture / IP Manager', location: 'Bangalore, KA, IN', type: 'Full-time', dept: 'architecture', gradient: 'from-violet-500 to-violet-500' },
+  { id: 2, title: 'SoC Design Manager', location: 'Bangalore, KA, IN', type: 'Full-time', dept: 'design', gradient: 'from-violet-500 to-violet-600' },
   { id: 3, title: 'Product & Test Engineering Manager', location: 'Bangalore, KA, IN', type: 'Full-time', dept: 'engineering', gradient: 'from-orange-400 to-rose-500' },
   { id: 4, title: 'Ecosystem Manager', location: 'Bangalore, KA, IN', type: 'Full-time', dept: 'operations', gradient: 'from-emerald-500 to-cyan-500' },
-  { id: 5, title: 'Application Engineer', location: 'Bengaluru, KA, IN', type: 'Full-time', dept: 'engineering', gradient: 'from-cyan-500 to-blue-500' },
+  { id: 5, title: 'Application Engineer', location: 'Bengaluru, KA, IN', type: 'Full-time', dept: 'engineering', gradient: 'from-cyan-500 to-violet-500' },
   { id: 6, title: 'Business Development Executive', location: 'San Diego, USA', type: 'Full-time', dept: 'marketing', gradient: 'from-indigo-500 to-violet-500' },
   { id: 7, title: 'EDA Administration', location: 'Bengaluru, IN', type: 'Full-time', dept: 'engineering', gradient: 'from-teal-500 to-cyan-500' },
   { id: 8, title: 'Product Marketing Engineer', location: 'Bengaluru, IN', type: 'Full-time', dept: 'marketing', gradient: 'from-pink-500 to-rose-500' },
   { id: 9, title: 'Test Engineer', location: 'Bengaluru, IN', type: 'Full-time', dept: 'engineering', gradient: 'from-orange-400 to-amber-500' },
-  { id: 10, title: 'Analog Validation Engineer', location: 'Bengaluru, IN', type: 'Full-time', dept: 'engineering', gradient: 'from-blue-500 to-cyan-500' },
+  { id: 10, title: 'Analog Validation Engineer', location: 'Bengaluru, IN', type: 'Full-time', dept: 'engineering', gradient: 'from-violet-500 to-cyan-500' },
   { id: 11, title: 'Analog Design Engineer', location: 'Bengaluru, IN', type: 'Full-time', dept: 'design', gradient: 'from-violet-500 to-purple-600' },
   { id: 12, title: 'SAP FICO Functional', location: 'Bengaluru, IN', type: 'Full-time', dept: 'finance', gradient: 'from-emerald-500 to-green-600' },
-  { id: 13, title: 'SAP ABAP Developer', location: 'Bengaluru, IN', type: 'Full-time', dept: 'engineering', gradient: 'from-blue-600 to-indigo-600' },
+  { id: 13, title: 'SAP ABAP Developer', location: 'Bengaluru, IN', type: 'Full-time', dept: 'engineering', gradient: 'from-violet-600 to-indigo-600' },
   { id: 14, title: 'RF Design Engineer', location: 'Bengaluru, IN', type: 'Full-time', dept: 'engineering', gradient: 'from-rose-500 to-pink-600' },
-  { id: 15, title: 'Product Engineer', location: 'San Diego, USA', type: 'Full-time', dept: 'engineering', gradient: 'from-cyan-500 to-blue-600' },
+  { id: 15, title: 'Product Engineer', location: 'San Diego, USA', type: 'Full-time', dept: 'engineering', gradient: 'from-cyan-500 to-violet-600' },
 ];
 
 const perks = [
@@ -58,22 +58,22 @@ export default function CareersPage() {
       <Navbar />
 
       {/* Hero */}
-      <div className="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 pt-32 pb-20 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-slate-950 via-violet-950 to-slate-900 pt-32 pb-20 relative overflow-hidden">
         <div className="hero-grid absolute inset-0 opacity-20 pointer-events-none" />
-        <div className="absolute top-1/4 right-0 w-96 h-96 orb-blue opacity-30 pointer-events-none" />
+        <div className="absolute top-1/4 right-0 w-96 h-96 orb-violet opacity-30 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="flex items-center gap-2 text-blue-400 text-sm font-medium mb-6">
-            <Link to="/" className="hover:text-blue-300 transition-colors">Home</Link>
+          <div className="flex items-center gap-2 text-violet-400 text-sm font-medium mb-6">
+            <Link to="/" className="hover:text-violet-300 transition-colors">Home</Link>
             <ChevronRight className="w-4 h-4" />
             <span>Careers</span>
           </div>
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-400/20 rounded-full text-blue-300 text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-violet-500/10 border border-violet-400/20 rounded-full text-violet-300 text-sm font-medium mb-6">
               15 Open Positions
             </div>
             <h1 className="font-poppins font-bold text-5xl md:text-6xl text-white leading-tight mb-6">
               Join Axiro.<br />
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-violet-400 to-cyan-300 bg-clip-text text-transparent">
                 Shape the Future.
               </span>
             </h1>
@@ -92,8 +92,8 @@ export default function CareersPage() {
               {perks.map((perk, i) => {
                 const Icon = perk.icon;
                 return (
-                  <div key={perk.title} className={`reveal delay-${i+1} flex gap-4 bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100 rounded-2xl p-6`}>
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                  <div key={perk.title} className={`reveal delay-${i+1} flex gap-4 bg-gradient-to-br from-violet-50 to-cyan-50 border border-violet-100 rounded-2xl p-6`}>
+                    <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -110,20 +110,20 @@ export default function CareersPage() {
         {/* CEO Message */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
-            <div className="bg-gradient-to-br from-slate-900 to-blue-950 rounded-3xl p-8 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-slate-900 to-violet-950 rounded-3xl p-8 relative overflow-hidden">
               <div className="hero-grid absolute inset-0 opacity-20" />
               <div className="relative">
-                <div className="text-5xl text-blue-400 font-serif mb-4">"</div>
+                <div className="text-5xl text-violet-400 font-serif mb-4">"</div>
                 <p className="text-slate-200 text-lg leading-relaxed mb-6 font-medium italic">
                   At Axiro, we believe that talent, curiosity, and integrity are the driving forces behind meaningful innovation. We are committed to creating a workplace where diverse perspectives are respected, bold ideas are encouraged, and individuals are empowered to make a lasting impact.
                 </p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg">
+                  <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg">
                     <span className="text-white font-bold text-sm">NY</span>
                   </div>
                   <div>
                     <div className="text-white font-bold">Naveen Yanduru</div>
-                    <div className="text-blue-400 text-sm">Chief Executive Officer, Axiro</div>
+                    <div className="text-violet-400 text-sm">Chief Executive Officer, Axiro</div>
                   </div>
                 </div>
               </div>

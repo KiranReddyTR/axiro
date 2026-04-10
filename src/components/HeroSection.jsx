@@ -85,7 +85,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 overflow-hidden flex flex-col">
+    <section className="relative min-h-screen bg-gradient-to-br from-slate-950 via-violet-950 to-slate-900 overflow-hidden flex flex-col">
       {/* Background Elements */}
       <canvas
         ref={particlesRef}
@@ -94,9 +94,9 @@ export default function HeroSection() {
       <div className="hero-grid absolute inset-0 opacity-30 pointer-events-none" />
 
       {/* Glowing orbs */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 orb-blue pointer-events-none animate-pulse-slow" />
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 orb-violet pointer-events-none animate-pulse-slow" />
       <div className="absolute bottom-1/4 left-1/4 w-72 h-72 orb-cyan pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-500/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-violet-500/5 blur-3xl pointer-events-none" />
 
       {/* Content */}
       <div className="relative flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
@@ -104,17 +104,17 @@ export default function HeroSection() {
           {/* Left */}
           <div className="animate-slide-up">
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-400/20 rounded-full text-blue-300 text-sm font-medium mb-6">
-              <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-violet-500/10 border border-violet-400/20 rounded-full text-violet-300 text-sm font-medium mb-6">
+              <div className="w-1.5 h-1.5 bg-violet-400 rounded-full animate-pulse" />
               RF & mmWave Semiconductor Solutions
             </div>
 
             <h1 className="font-poppins font-bold text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6">
               {t('hero.titlePart1')}{' '}
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-violet-400 to-cyan-300 bg-clip-text text-transparent">
                 {t('hero.titlePart2')}
               </span>
-              <span className="text-blue-400">.</span>
+              <span className="text-violet-400">.</span>
             </h1>
 
             <p className="text-lg text-slate-300 leading-relaxed mb-8 max-w-xl">
@@ -128,7 +128,7 @@ export default function HeroSection() {
                   key={label}
                   className="flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-slate-300 text-xs font-medium"
                 >
-                  <Icon className="w-3.5 h-3.5 text-blue-400" />
+                  <Icon className="w-3.5 h-3.5 text-violet-400" />
                   {label}
                 </div>
               ))}
@@ -138,7 +138,7 @@ export default function HeroSection() {
             <div className="flex flex-wrap gap-4">
               <Link
                 to="/products"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-violet-500/40 hover:scale-105 transition-all duration-300"
               >
                 {t('hero.ctaProducts')} <ArrowRight className="w-5 h-5" />
               </Link>
@@ -156,15 +156,15 @@ export default function HeroSection() {
             {/* Circuit board visual */}
             <div className="relative w-full aspect-square max-w-md mx-auto">
               {/* Central circle */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/10 rounded-3xl border border-blue-400/20 backdrop-blur-sm" />
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/20 to-cyan-500/10 rounded-3xl border border-violet-400/20 backdrop-blur-sm" />
 
               {/* Animated ring */}
-              <div className="absolute inset-4 border border-blue-400/30 rounded-2xl animate-spin" style={{ animationDuration: '20s' }} />
+              <div className="absolute inset-4 border border-violet-400/30 rounded-2xl animate-spin" style={{ animationDuration: '20s' }} />
               <div className="absolute inset-8 border border-cyan-400/20 rounded-2xl animate-spin" style={{ animationDuration: '12s', animationDirection: 'reverse' }} />
 
               {/* Central icon */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-2xl shadow-blue-500/40 animate-float">
+                <div className="w-32 h-32 bg-gradient-to-br from-violet-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-2xl shadow-violet-500/40 animate-float">
                   <div className="text-center">
                     <div className="w-16 h-16 mx-auto mb-1 relative">
                       <div className="absolute inset-0 border-2 border-white/40 rounded-xl" />
@@ -195,7 +195,7 @@ export default function HeroSection() {
                 return (
                   <div
                     key={label}
-                    className="absolute w-14 h-14 bg-slate-800/80 border border-blue-400/30 rounded-xl flex items-center justify-center text-blue-300 text-xs font-bold backdrop-blur-sm shadow-lg"
+                    className="absolute w-14 h-14 bg-slate-800/80 border border-violet-400/30 rounded-xl flex items-center justify-center text-violet-300 text-xs font-bold backdrop-blur-sm shadow-lg"
                     style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%,-50%)' }}
                   >
                     {label}
@@ -213,7 +213,7 @@ export default function HeroSection() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map(({ value, label }) => (
               <div key={label} className="text-center">
-                <div className="text-3xl font-bold font-poppins bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                <div className="text-3xl font-bold font-poppins bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
                   {value}
                 </div>
                 <div className="text-slate-400 text-sm mt-1 font-medium">{label}</div>

@@ -8,8 +8,8 @@ const technologies = [
     tagline: 'Digital Step Attenuators',
     description:
       "Axiro's digital step attenuators virtually eliminate transient overshoot during MSB attenuation state transitions of standard DSAs — protecting amplifiers and preserving ADC data integrity.",
-    gradient: 'from-blue-500 to-blue-600',
-    bgGlow: 'bg-blue-500/10',
+    gradient: 'from-violet-500 to-violet-600',
+    bgGlow: 'bg-violet-500/10',
     icon: '⚡',
     metrics: ['Zero Transient Overshoot', 'MSB Protected', 'Amplifier Safe'],
   },
@@ -30,7 +30,7 @@ const technologies = [
     tagline: 'RF Amplifiers & Mixers',
     description:
       'Axiro RF amplifiers and mixers improve SNR by reducing the noise floor and third-order intermodulation distortion — critical for crowded spectrum environments and maximizing QoS.',
-    gradient: 'from-violet-500 to-blue-500',
+    gradient: 'from-violet-500 to-violet-500',
     bgGlow: 'bg-violet-500/10',
     icon: '🔬',
     metrics: ['Reduced IM3', 'Improved QoS', 'Spectrum Efficient'],

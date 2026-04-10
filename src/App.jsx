@@ -19,16 +19,16 @@ function ScrollToTop() {
 
 function NotFoundPage() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-slate-950 via-violet-950 to-slate-900">
       <div className="text-center">
-        <div className="text-8xl font-bold font-poppins bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent mb-4">
+        <div className="text-8xl font-bold font-poppins bg-gradient-to-r from-violet-400 to-cyan-300 bg-clip-text text-transparent mb-4">
           404
         </div>
         <h2 className="text-2xl text-white font-semibold mb-3">Page Not Found</h2>
         <p className="text-slate-400 mb-8">The page you're looking for doesn't exist.</p>
         <a
           href="/"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-xl hover:scale-105 transition-all duration-300"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-semibold rounded-xl hover:scale-105 transition-all duration-300"
         >
           ← Back to Home
         </a>

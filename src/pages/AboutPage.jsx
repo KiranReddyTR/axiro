@@ -5,11 +5,11 @@ import Footer from '../components/Footer';
 import { ChevronRight, ChevronDown } from 'lucide-react';
 
 const team = [
-  { name: 'Naveen Yanduru', role: 'Chief Executive Officer', initials: 'NY', gradient: 'from-blue-500 to-blue-700', bio: 'Distinguished semiconductor leader with 25+ years in RF, analog, and mixed-signal technologies. PhD from UT Dallas. 25 IEEE publications.' },
-  { name: 'Dr. Tumay Kanar', role: 'CTO & BU Head, Super-8 GHz', initials: 'TK', gradient: 'from-violet-500 to-blue-500', bio: '15+ years advancing mmWave, RF, and 5G front-end solutions. 25+ patents, 35+ publications. Cornell (BS), UC San Diego (MS/PhD).' },
+  { name: 'Naveen Yanduru', role: 'Chief Executive Officer', initials: 'NY', gradient: 'from-violet-500 to-violet-700', bio: 'Distinguished semiconductor leader with 25+ years in RF, analog, and mixed-signal technologies. PhD from UT Dallas. 25 IEEE publications.' },
+  { name: 'Dr. Tumay Kanar', role: 'CTO & BU Head, Super-8 GHz', initials: 'TK', gradient: 'from-violet-500 to-violet-500', bio: '15+ years advancing mmWave, RF, and 5G front-end solutions. 25+ patents, 35+ publications. Cornell (BS), UC San Diego (MS/PhD).' },
   { name: 'Dr. Tushar Sharma', role: 'Head, Strategy & New Initiatives', initials: 'TS', gradient: 'from-emerald-500 to-cyan-500', bio: 'PhD from University of Calgary, postdoc at Princeton. 70+ publications, 5 US patents. IEEE Young Professionals Hall of Fame Award.' },
   { name: 'Dr. Himanshu Khatri', role: 'Vice President, Engineering', initials: 'HK', gradient: 'from-orange-400 to-rose-500', bio: 'IIT Kanpur (BTech), UC San Diego (MS/PhD). Led 4G/5G RF chips at Qualcomm, then mmWave at Renesas India. 9 IEEE papers, multiple patents.' },
-  { name: 'Srinidhi Embar R.', role: 'Head, Power Amplifier Development', initials: 'SE', gradient: 'from-cyan-500 to-blue-500', bio: 'MS/PhD from University of Kassel, Germany. 30+ publications, 35 US patents. 19+ years in RF and microwave engineering.' },
+  { name: 'Srinidhi Embar R.', role: 'Head, Power Amplifier Development', initials: 'SE', gradient: 'from-cyan-500 to-violet-500', bio: 'MS/PhD from University of Kassel, Germany. 30+ publications, 35 US patents. 19+ years in RF and microwave engineering.' },
   { name: 'William Qi', role: 'BU Head, Sub-8 GHz', initials: 'WQ', gradient: 'from-indigo-500 to-violet-500', bio: '12+ years in Product Marketing at Renesas. Deep expertise in RF applications, architecture, and business strategy.' },
   { name: 'Edan Collymore', role: 'Head, Operations', initials: 'EC', gradient: 'from-teal-500 to-cyan-500', bio: 'Nearly two decades of RF product engineering at Hittite Microwave, IDT, and Renesas. BS in Electronic Engineering from Wentworth.' },
   { name: 'Lavanya V.', role: 'Head, Human Resources', initials: 'LV', gradient: 'from-pink-500 to-rose-500', bio: '18+ years driving transformative people strategies across Oracle, CDK Global, Micron, and Satyam Computer.' },
@@ -78,19 +78,19 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero */}
-      <div className="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 pt-32 pb-20 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-slate-950 via-violet-950 to-slate-900 pt-32 pb-20 relative overflow-hidden">
         <div className="hero-grid absolute inset-0 opacity-20 pointer-events-none" />
-        <div className="absolute top-1/4 right-0 w-96 h-96 orb-blue opacity-30 pointer-events-none" />
+        <div className="absolute top-1/4 right-0 w-96 h-96 orb-violet opacity-30 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="flex items-center gap-2 text-blue-400 text-sm font-medium mb-6">
-            <Link to="/" className="hover:text-blue-300 transition-colors">Home</Link>
+          <div className="flex items-center gap-2 text-violet-400 text-sm font-medium mb-6">
+            <Link to="/" className="hover:text-violet-300 transition-colors">Home</Link>
             <ChevronRight className="w-4 h-4" />
             <span>About Us</span>
           </div>
           <div className="max-w-3xl">
             <h1 className="font-poppins font-bold text-5xl md:text-6xl text-white leading-tight mb-6">
               Redefining Innovation<br />
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">for a New Era</span>
+              <span className="bg-gradient-to-r from-violet-400 to-cyan-300 bg-clip-text text-transparent">for a New Era</span>
             </h1>
             <p className="text-lg text-slate-300 leading-relaxed">
               With over a decade of global excellence, we deliver cutting-edge electrical engineering solutions, transforming industries and enhancing lives through innovation, quality, and trusted partnerships across diverse sectors.
@@ -112,13 +112,13 @@ export default function AboutPage() {
                   Mission &<span className="gradient-text"> Vision</span>
                 </h2>
                 <div className="space-y-6">
-                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100 rounded-2xl p-6">
-                    <h3 className="font-bold font-poppins text-blue-700 text-lg mb-2">Mission</h3>
+                  <div className="bg-gradient-to-br from-violet-50 to-cyan-50 border border-violet-100 rounded-2xl p-6">
+                    <h3 className="font-bold font-poppins text-violet-700 text-lg mb-2">Mission</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
                       Axiro is committed to bridging possibilities and performance through semiconductor innovation, transforming industries, and driving next-generation technology.
                     </p>
                   </div>
-                  <div className="bg-gradient-to-br from-violet-50 to-blue-50 border border-violet-100 rounded-2xl p-6">
+                  <div className="bg-gradient-to-br from-violet-50 to-violet-50 border border-violet-100 rounded-2xl p-6">
                     <h3 className="font-bold font-poppins text-violet-700 text-lg mb-2">Vision</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
                       At Axiro, our vision is to be a global leader in high-performance semiconductor solutions that drive innovation and transform how the world connects, computes, and creates.
@@ -127,11 +127,11 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="reveal-right">
-                <div className="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 rounded-3xl p-8 relative overflow-hidden">
+                <div className="bg-gradient-to-br from-slate-950 via-violet-950 to-slate-900 rounded-3xl p-8 relative overflow-hidden">
                   <div className="hero-grid absolute inset-0 opacity-20" />
                   <div className="relative space-y-5">
                     {[
-                      { icon: '🔐', title: 'Integrity & Responsibility', color: 'text-blue-300' },
+                      { icon: '🔐', title: 'Integrity & Responsibility', color: 'text-violet-300' },
                       { icon: '⚙️', title: 'Engineering Excellence', color: 'text-cyan-300' },
                       { icon: '💡', title: 'Customers at the Core', color: 'text-violet-300' },
                       { icon: '🚀', title: 'Passion for Possibilities', color: 'text-emerald-300' },
@@ -158,9 +158,9 @@ export default function AboutPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {[
-                { name: 'Glitch-Free™', sub: 'Digital Step Attenuators', desc: 'Virtually eliminates transient overshoot during MSB attenuation state transitions.', gradient: 'from-blue-500 to-blue-600' },
-                { name: 'FlatNoise™', sub: 'Variable Gain Amplifiers', desc: 'VGA noise figure kept virtually flat in the critical region while gain is reduced, enhancing SNR.', gradient: 'from-cyan-500 to-blue-500' },
-                { name: 'Zero-Distortion™', sub: 'RF Amplifiers & Mixers', desc: 'Improves SNR by reducing noise floor and third-order intermodulation distortion.', gradient: 'from-violet-500 to-blue-500' },
+                { name: 'Glitch-Free™', sub: 'Digital Step Attenuators', desc: 'Virtually eliminates transient overshoot during MSB attenuation state transitions.', gradient: 'from-violet-500 to-violet-600' },
+                { name: 'FlatNoise™', sub: 'Variable Gain Amplifiers', desc: 'VGA noise figure kept virtually flat in the critical region while gain is reduced, enhancing SNR.', gradient: 'from-cyan-500 to-violet-500' },
+                { name: 'Zero-Distortion™', sub: 'RF Amplifiers & Mixers', desc: 'Improves SNR by reducing noise floor and third-order intermodulation distortion.', gradient: 'from-violet-500 to-violet-500' },
                 { name: 'KLIN™', sub: 'Constant Linearity Technology', desc: 'Maintains constant high linearity (OIP3) as gain is adjusted in VGAs.', gradient: 'from-emerald-500 to-cyan-500' },
                 { name: 'K|Z|™', sub: 'Constant Impedance Technology', desc: 'RF switches maintain nearly constant impedance during switching, minimizing VSWR transients.', gradient: 'from-orange-400 to-rose-500' },
                 { name: 'KGAIN™', sub: 'Gain Compensation Technology', desc: 'Automatically reduces S21 variation over temperature for large signal chains.', gradient: 'from-rose-500 to-orange-500' },

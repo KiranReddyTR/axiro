@@ -9,9 +9,9 @@ const products = [
     category: 'RF Switches',
     href: '/product/f2914',
     badge: 'Featured',
-    badgeColor: 'bg-blue-500',
+    badgeColor: 'bg-violet-500',
     specs: ['High Reliability', 'SP4T Configuration', 'Broadband'],
-    gradient: 'from-blue-500 to-blue-600',
+    gradient: 'from-violet-500 to-violet-600',
   },
   {
     id: 'f2932',
@@ -33,7 +33,7 @@ const products = [
     badge: 'Satcom',
     badgeColor: 'bg-violet-500',
     specs: ['8-Channel TX', 'Ku-Band', 'Active Beamforming'],
-    gradient: 'from-violet-500 to-blue-500',
+    gradient: 'from-violet-500 to-violet-500',
   },
   {
     id: 'f6921',
@@ -44,7 +44,7 @@ const products = [
     badge: 'LNA',
     badgeColor: 'bg-cyan-600',
     specs: ['Dual Channel', 'Ultra-Low NF', 'Ku-Band'],
-    gradient: 'from-cyan-500 to-blue-500',
+    gradient: 'from-cyan-500 to-violet-500',
   },
   {
     id: 'f1485',
@@ -77,7 +77,7 @@ const products = [
     badge: 'mmWave',
     badgeColor: 'bg-indigo-500',
     specs: ['Up/Down Converter', '24.25–29.5GHz', 'Zero-Distortion™'],
-    gradient: 'from-indigo-500 to-blue-500',
+    gradient: 'from-indigo-500 to-violet-500',
   },
 ];
 

@@ -27,16 +27,16 @@ export default function ContactPage() {
       <Navbar />
 
       {/* Hero */}
-      <div className="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 pt-32 pb-20 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-slate-950 via-violet-950 to-slate-900 pt-32 pb-20 relative overflow-hidden">
         <div className="hero-grid absolute inset-0 opacity-20 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="flex items-center gap-2 text-blue-400 text-sm font-medium mb-6">
-            <Link to="/" className="hover:text-blue-300">Home</Link>
+          <div className="flex items-center gap-2 text-violet-400 text-sm font-medium mb-6">
+            <Link to="/" className="hover:text-violet-300">Home</Link>
             <ChevronRight className="w-4 h-4" />
             <span>Contact</span>
           </div>
           <h1 className="font-poppins font-bold text-5xl md:text-6xl text-white leading-tight mb-6">
-            Get in <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">Touch</span>
+            Get in <span className="bg-gradient-to-r from-violet-400 to-cyan-300 bg-clip-text text-transparent">Touch</span>
           </h1>
           <p className="text-lg text-slate-300 max-w-2xl">
             Whether you have a question, need technical support, or are looking to partner with us — we're here to help.
@@ -58,7 +58,7 @@ export default function ContactPage() {
                 const Icon = info.icon;
                 return (
                   <div key={info.title} className="flex gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow">
+                    <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow">
                       <Icon className="w-5 h-5 text-white" />
                     </div>
                     <div>

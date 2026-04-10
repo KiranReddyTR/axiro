@@ -9,12 +9,12 @@ const newsArticles = [
     id: 1,
     date: 'April 3, 2025',
     category: 'Company News',
-    categoryColor: 'bg-blue-500',
+    categoryColor: 'bg-violet-500',
     title: 'Axiro Semiconductor Completes Acquisition of RF Business from Renesas',
     excerpt: 'Effective 3rd April 2025, Axiro Semiconductor takes ownership of the RF product lines previously under Renesas Electronics, ensuring uninterrupted supply for customers across 5G, satellite, and defense sectors worldwide.',
     readTime: '5 min read',
     featured: true,
-    gradient: 'from-blue-500 to-blue-700',
+    gradient: 'from-violet-500 to-violet-700',
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const newsArticles = [
     excerpt: 'The F5268 delivers 8-channel dual-polarization transmit/receive beamforming at 24.25–27.5GHz, enabling next-generation massive MIMO base stations with unprecedented signal density and efficiency.',
     readTime: '4 min read',
     featured: false,
-    gradient: 'from-violet-500 to-blue-500',
+    gradient: 'from-violet-500 to-violet-500',
   },
   {
     id: 3,
@@ -58,7 +58,7 @@ const newsArticles = [
     excerpt: 'Axiro will present its latest RF and mmWave innovations at the IEEE International Microwave Symposium 2025, highlighting advances in phased-array beamforming, low-noise amplification, and 5G infrastructure.',
     readTime: '2 min read',
     featured: false,
-    gradient: 'from-cyan-500 to-blue-500',
+    gradient: 'from-cyan-500 to-violet-500',
   },
   {
     id: 6,
@@ -69,7 +69,7 @@ const newsArticles = [
     excerpt: 'A deep-dive into Axiro\'s proprietary KGAIN technology — how automatic S21 variation reduction over temperature significantly simplifies design constraints for large-scale RF signal chains in 5G and defense applications.',
     readTime: '7 min read',
     featured: false,
-    gradient: 'from-indigo-500 to-blue-500',
+    gradient: 'from-indigo-500 to-violet-500',
   },
 ];
 
@@ -91,18 +91,18 @@ export default function NewsPage() {
       <Navbar />
 
       {/* Hero */}
-      <div className="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 pt-32 pb-20 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-slate-950 via-violet-950 to-slate-900 pt-32 pb-20 relative overflow-hidden">
         <div className="hero-grid absolute inset-0 opacity-20 pointer-events-none" />
-        <div className="absolute top-1/4 right-0 w-96 h-96 orb-blue opacity-30 pointer-events-none" />
+        <div className="absolute top-1/4 right-0 w-96 h-96 orb-violet opacity-30 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="flex items-center gap-2 text-blue-400 text-sm font-medium mb-6">
-            <Link to="/" className="hover:text-blue-300 transition-colors">Home</Link>
+          <div className="flex items-center gap-2 text-violet-400 text-sm font-medium mb-6">
+            <Link to="/" className="hover:text-violet-300 transition-colors">Home</Link>
             <ChevronRight className="w-4 h-4" />
             <span>News & Insights</span>
           </div>
           <h1 className="font-poppins font-bold text-5xl md:text-6xl text-white leading-tight mb-6">
             News &{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-violet-400 to-cyan-300 bg-clip-text text-transparent">
               Insights
             </span>
           </h1>

@@ -10,8 +10,8 @@ const categories = [
     name: 'RF & mmWave Amplifiers',
     description: 'High performance signal amplification solutions from LNA to Power Amplifiers with KGAIN technology maintaining near-constant gain across temperature ranges.',
     productCount: 24,
-    gradient: 'from-blue-500 to-blue-600',
-    bgLight: 'bg-blue-50',
+    gradient: 'from-violet-500 to-violet-600',
+    bgLight: 'bg-violet-50',
     features: ['FlatNoise™', 'KGAIN™', 'Wideband', 'Low NF'],
     href: '/products/amplifiers',
   },
@@ -20,7 +20,7 @@ const categories = [
     name: 'RF & mmWave Mixers',
     description: 'Precision frequency conversion with Zero-Distortion™ technology improving SNR by reducing noise floor and third-order intermodulation distortion.',
     productCount: 12,
-    gradient: 'from-cyan-500 to-blue-500',
+    gradient: 'from-cyan-500 to-violet-500',
     bgLight: 'bg-cyan-50',
     features: ['Zero-Distortion™', 'Up/Down Converter', 'mmWave', 'Low IM3'],
     href: '/products/mixers',
@@ -30,7 +30,7 @@ const categories = [
     name: 'RF Switches',
     description: "Proprietary K|Z| constant impedance technology maintains nearly constant impedance when switching between RF ports, minimizing VSWR transients.",
     productCount: 18,
-    gradient: 'from-violet-500 to-blue-500',
+    gradient: 'from-violet-500 to-violet-500',
     bgLight: 'bg-violet-50',
     features: ['K|Z|™', 'SP2T/SP4T', 'Glitch-Free™', 'High Isolation'],
     href: '/products/switches',
@@ -70,7 +70,7 @@ const categories = [
     name: 'Rapid IO Switches & Bridges',
     description: 'High-speed data interconnect solutions enabling fast and reliable data transfer across embedded processor networks and electronic systems.',
     productCount: 8,
-    gradient: 'from-indigo-500 to-blue-500',
+    gradient: 'from-indigo-500 to-violet-500',
     bgLight: 'bg-indigo-50',
     features: ['RapidIO Gen3', 'PCIe Bridge', 'Low Latency', 'Cut-Through'],
     href: '/products/rapid-io',
@@ -98,11 +98,11 @@ const categories = [
 ];
 
 const featuredItems = [
-  { code: 'F2914', name: 'High Reliability SP4T RF Switch', category: 'RF Switches', gradient: 'from-blue-500 to-blue-600' },
-  { code: 'F6521', name: '8-Channel Transmit Active Beamforming IC (Ku-Band)', category: 'Phased Array Beamformers', gradient: 'from-violet-500 to-blue-500' },
-  { code: 'F6921', name: 'Dual-Channel Low Noise Amplifier (Ku-Band Satcom)', category: 'RF & mmWave Amplifiers', gradient: 'from-cyan-500 to-blue-500' },
+  { code: 'F2914', name: 'High Reliability SP4T RF Switch', category: 'RF Switches', gradient: 'from-violet-500 to-violet-600' },
+  { code: 'F6521', name: '8-Channel Transmit Active Beamforming IC (Ku-Band)', category: 'Phased Array Beamformers', gradient: 'from-violet-500 to-violet-500' },
+  { code: 'F6921', name: 'Dual-Channel Low Noise Amplifier (Ku-Band Satcom)', category: 'RF & mmWave Amplifiers', gradient: 'from-cyan-500 to-violet-500' },
   { code: 'F5268', name: '8-Channel Dual-Pol TRX Beamformer IC at 24.25–27.5GHz', category: 'Phased Array Beamformers', gradient: 'from-pink-500 to-violet-500' },
-  { code: 'F5701', name: 'mmWave Up/Down-Converter 24.25–29.5GHz', category: 'RF & mmWave Mixers', gradient: 'from-indigo-500 to-blue-500' },
+  { code: 'F5701', name: 'mmWave Up/Down-Converter 24.25–29.5GHz', category: 'RF & mmWave Mixers', gradient: 'from-indigo-500 to-violet-500' },
   { code: 'F1485', name: 'High Gain RF Amplifier 2300MHz–5000MHz', category: 'RF & mmWave Amplifiers', gradient: 'from-orange-400 to-rose-500' },
 ];
 
@@ -128,22 +128,22 @@ export default function ProductsPage() {
       <Navbar />
 
       {/* Page Header */}
-      <div className="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 pt-32 pb-20 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-slate-950 via-violet-950 to-slate-900 pt-32 pb-20 relative overflow-hidden">
         <div className="hero-grid absolute inset-0 opacity-20 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-96 h-96 orb-blue opacity-30 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 orb-violet opacity-30 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-blue-400 text-sm font-medium mb-4">
-              <Link to="/" className="hover:text-blue-300 transition-colors">Home</Link>
+            <div className="flex items-center gap-2 text-violet-400 text-sm font-medium mb-4">
+              <Link to="/" className="hover:text-violet-300 transition-colors">Home</Link>
               <ChevronRight className="w-4 h-4" />
               <span>Products</span>
             </div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-400/20 rounded-full text-blue-300 text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-violet-500/10 border border-violet-400/20 rounded-full text-violet-300 text-sm font-medium mb-6">
               Circuit-Level Innovations
             </div>
             <h1 className="font-poppins font-bold text-5xl md:text-6xl text-white leading-tight mb-6">
               RF Products<br />
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">Portfolio</span>
+              <span className="bg-gradient-to-r from-violet-400 to-cyan-300 bg-clip-text text-transparent">Portfolio</span>
             </h1>
             <p className="text-lg text-slate-300 leading-relaxed max-w-2xl">
               Discover Axiro's comprehensive range of high-performance RF and mmWave semiconductor solutions — engineered for world-class reliability from 10KHz to 40GHz.

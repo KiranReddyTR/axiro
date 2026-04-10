@@ -15,7 +15,7 @@ const newsItems = [
     category: 'Company News',
     title: 'Axiro Semiconductor Completes Acquisition of RF Business from Renesas',
     excerpt: 'Effective 3rd April 2025, Axiro Semiconductor takes ownership of the RF product lines previously under Renesas Electronics, continuing uninterrupted supply for customers worldwide.',
-    color: 'bg-blue-500',
+    color: 'bg-violet-500',
   },
   {
     date: 'March 2025',

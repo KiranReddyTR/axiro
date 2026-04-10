@@ -27,7 +27,7 @@ const productDatabase = {
       { name: 'F2914 S-Parameters', size: '1.71 MB', type: 'Model - S-parameter', date: '2024-08-25' },
       { name: 'F2914 IBIS Model', size: '4.23 KB', type: 'Model - IBIS', date: '2024-08-25' }
     ],
-    gradient: 'from-blue-500 to-cyan-500'
+    gradient: 'from-violet-500 to-cyan-500'
   }
 };
 
@@ -57,13 +57,13 @@ export default function ProductDetailPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 pt-32 pb-16 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-slate-950 via-violet-950 to-slate-900 pt-32 pb-16 relative overflow-hidden">
         <div className="hero-grid absolute inset-0 opacity-20 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="flex items-center gap-2 text-blue-400 text-sm font-medium mb-8">
-            <Link to="/" className="hover:text-blue-300">Home</Link>
+          <div className="flex items-center gap-2 text-violet-400 text-sm font-medium mb-8">
+            <Link to="/" className="hover:text-violet-300">Home</Link>
             <ChevronRight className="w-4 h-4" />
-            <Link to="/products" className="hover:text-blue-300">Products</Link>
+            <Link to="/products" className="hover:text-violet-300">Products</Link>
             <ChevronRight className="w-4 h-4" />
             <span className="text-slate-300">{product.name}</span>
           </div>
@@ -78,7 +78,7 @@ export default function ProductDetailPage() {
               </h1>
               <div className="flex flex-wrap gap-4 mt-8">
                 <button className="btn-primary">Request Sample</button>
-                <Link to="/contact" className="btn-outline border-white/30 text-white hover:bg-white hover:text-blue-900">Contact Sales</Link>
+                <Link to="/contact" className="btn-outline border-white/30 text-white hover:bg-white hover:text-violet-900">Contact Sales</Link>
               </div>
             </div>
             
@@ -147,11 +147,11 @@ export default function ProductDetailPage() {
             </div>
           </div>
           
-          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100 rounded-2xl p-6 reveal delay-3">
-            <h3 className="font-bold text-blue-900 mb-4 flex items-center gap-2">
-              <Package className="w-4 h-4 text-blue-500" /> Ordering Options
+          <div className="bg-gradient-to-br from-violet-50 to-cyan-50 border border-violet-100 rounded-2xl p-6 reveal delay-3">
+            <h3 className="font-bold text-violet-900 mb-4 flex items-center gap-2">
+              <Package className="w-4 h-4 text-violet-500" /> Ordering Options
             </h3>
-            <div className="bg-white rounded-xl p-4 border border-blue-100/50 shadow-sm text-sm">
+            <div className="bg-white rounded-xl p-4 border border-violet-100/50 shadow-sm text-sm">
               <div className="flex justify-between border-b border-gray-100 pb-2 mb-2">
                 <span className="text-gray-500">Status</span>
                 <span className="font-semibold text-emerald-600">Active</span>
@@ -165,7 +165,7 @@ export default function ProductDetailPage() {
                 <span className="font-medium text-gray-900">Yes</span>
               </div>
             </div>
-            <button className="w-full mt-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl transition-colors shadow shadow-blue-500/20">
+            <button className="w-full mt-4 py-2.5 bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold rounded-xl transition-colors shadow shadow-violet-500/20">
               Buy / Check Inventory
             </button>
           </div>
