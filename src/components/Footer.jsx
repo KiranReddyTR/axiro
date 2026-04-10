@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Cpu, ExternalLink, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { ExternalLink, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import logo from '../assets/logo.jpeg';
 
 const footerLinks = {
   Products: [
@@ -64,9 +65,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 group mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                <Cpu className="w-5 h-5 text-white" />
+            <Link to="/" className="flex items-center gap-3 group mb-6">
+              <div className="w-12 h-12 overflow-hidden rounded-xl shadow-lg group-hover:shadow-primary-500/20 transition-all duration-300 bg-white p-0.5">
+                <img src={logo} alt="Axiro Logo" className="w-full h-full object-contain" />
               </div>
               <span className="text-xl font-bold font-poppins text-white">
                 Axiro<span className="text-primary-400"> Semiconductor</span>
