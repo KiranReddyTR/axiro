@@ -53,7 +53,10 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-cover bg-center bg-fixed relative" style={{ backgroundImage: "url('/bg/bg-1.jpeg')" }}>
+      {/* Dark Purple-to-Blue Gradient Overlay */}
+      <div className="fixed inset-0 bg-gradient-to-br from-indigo-950/80 via-purple-900/80 to-slate-950/90 backdrop-blur-[2px] pointer-events-none z-0" />
+      <div className="relative z-10 w-full h-full flex flex-col">
       <Navbar />
       <main>
         <HeroSection />
@@ -137,6 +140,7 @@ export default function HomePage() {
         </section>
       </main>
       <Footer />
+      </div>
     </div>
   );
 }

@@ -23,11 +23,14 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-cover bg-center bg-fixed relative" style={{ backgroundImage: "url('/bg/bg-1.jpeg')" }}>
+      {/* Dark Purple-to-Blue Gradient Overlay */}
+      <div className="fixed inset-0 bg-gradient-to-br from-indigo-950/80 via-purple-900/80 to-slate-950/90 backdrop-blur-[2px] pointer-events-none z-0" />
+      <div className="relative z-10 w-full h-full flex flex-col">
       <Navbar />
 
       {/* Hero */}
-      <div className="bg-gradient-to-br from-slate-950 via-violet-950 to-slate-900 pt-32 pb-20 relative overflow-hidden">
+      <div className="pt-32 pb-20 relative overflow-hidden">
         <div className="hero-grid absolute inset-0 opacity-20 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="flex items-center gap-2 text-violet-400 text-sm font-medium mb-6">
@@ -131,6 +134,7 @@ export default function ContactPage() {
       </main>
 
       <Footer />
+      </div>
     </div>
   );
 }

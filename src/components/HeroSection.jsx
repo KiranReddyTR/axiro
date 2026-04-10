@@ -86,18 +86,20 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-950 via-violet-950 to-slate-900 overflow-hidden flex flex-col">
+    <section 
+      className="relative min-h-screen overflow-hidden flex flex-col"
+    >
       {/* Background Elements */}
       <canvas
         ref={particlesRef}
-        className="absolute inset-0 w-full h-full pointer-events-none opacity-60"
+        className="absolute inset-0 w-full h-full pointer-events-none opacity-40 mix-blend-screen"
       />
-      <div className="hero-grid absolute inset-0 opacity-30 pointer-events-none" />
+      <div className="hero-grid absolute inset-0 opacity-20 pointer-events-none" />
 
       {/* Glowing orbs */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 orb-violet pointer-events-none animate-pulse-slow" />
-      <div className="absolute bottom-1/4 left-1/4 w-72 h-72 orb-cyan pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-violet-500/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 orb-violet pointer-events-none animate-pulse-slow mix-blend-screen opacity-50" />
+      <div className="absolute bottom-1/4 left-1/4 w-72 h-72 orb-cyan pointer-events-none mix-blend-screen opacity-50" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-violet-500/10 blur-3xl pointer-events-none" />
 
       {/* Content */}
       <div className="relative flex-1 flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
@@ -151,17 +153,8 @@ export default function HeroSection() {
               </Link>
             </div>
           </div>          {/* Right — True 3D WebGL Element */}
-          <div className="hidden lg:block relative animate-fade-in animate-delay-300">
-            {/* Ambient Backlight to frame the chip */}
-            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-cyan-500/10 rounded-full blur-3xl" />
-            
-            <Suspense fallback={
-              <div className="w-full h-[500px] flex items-center justify-center">
-                <div className="w-12 h-12 border-4 border-violet-500/30 border-t-cyan-400 rounded-full animate-spin" />
-              </div>
-            }>
-              <ThreeDChip />
-            </Suspense>
+          <div className="hidden lg:block relative pointer-events-none">
+            {/* Empty block to preserve grid layout structure as requested */}
           </div>
         </div>
       </div>
