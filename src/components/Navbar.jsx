@@ -55,16 +55,10 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 overflow-hidden rounded-xl shadow-md group-hover:shadow-primary-500/20 transition-all duration-300 bg-white p-0.5">
-              <img src={logo} alt="Axiro Logo" className="w-full h-full object-contain" />
+          <Link to="/" className="flex items-center group">
+            <div className="h-12 w-auto overflow-hidden rounded-xl shadow-md group-hover:shadow-primary-500/20 transition-all duration-300 bg-white p-1">
+              <img src={logo} alt="Axiro Logo" className="h-full w-auto object-contain" />
             </div>
-            <span className="text-xl font-bold font-poppins">
-              <span className={scrolled || isOpen ? "text-gray-900" : "text-white"}>
-                Axiro
-              </span>
-              <span className="gradient-text ml-0.5 font-extrabold uppercase tracking-tight text-lg">Semi</span>
-            </span>
           </Link>
 
           {/* Desktop Nav */}

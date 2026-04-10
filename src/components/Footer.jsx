@@ -65,13 +65,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-3 group mb-6">
-              <div className="w-12 h-12 overflow-hidden rounded-xl shadow-lg group-hover:shadow-primary-500/20 transition-all duration-300 bg-white p-0.5">
-                <img src={logo} alt="Axiro Logo" className="w-full h-full object-contain" />
+            <Link to="/" className="inline-block group mb-6">
+              <div className="h-16 w-auto overflow-hidden rounded-2xl shadow-lg group-hover:shadow-primary-500/20 transition-all duration-300 bg-white p-1.5">
+                <img src={logo} alt="Axiro Logo" className="h-full w-auto object-contain" />
               </div>
-              <span className="text-xl font-bold font-poppins text-white">
-                Axiro<span className="text-primary-400"> Semiconductor</span>
-              </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
               A premier innovator in RF and semiconductor technology, delivering groundbreaking solutions that redefine the future of global connectivity — from 5G to satellite communication.
