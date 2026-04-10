@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import MouseParallaxBackground from '../components/MouseParallaxBackground';
 import Footer from '../components/Footer';
 import { ChevronRight, ChevronDown } from 'lucide-react';
 
@@ -74,9 +75,8 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-cover bg-center bg-fixed relative" style={{ backgroundImage: "url('/bg/bg-3.jpeg')" }}>
-      {/* Dark Purple-to-Blue Gradient Overlay */}
-      <div className="fixed inset-0 bg-gradient-to-br from-indigo-950/80 via-purple-900/80 to-slate-950/90 backdrop-blur-[2px] pointer-events-none z-0" />
+    <div className="min-h-screen relative">
+      <MouseParallaxBackground imageUrl="/bg/bg-3.jpeg" />
       <div className="relative z-10 w-full h-full flex flex-col">
       <Navbar />
 
